@@ -119,7 +119,7 @@ export function HangingPaidStamp({ className = '', style }: HangingPaidStampProp
 
           {/* @ts-ignore */}
           <model-viewer
-            src="/paid-stamp.glb"
+            src={`${import.meta.env.BASE_URL}paid-stamp.glb`}
             alt="Paid Stamp 3D Model"
             auto-rotate
             rotation-per-second="24deg"

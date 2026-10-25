@@ -20,7 +20,7 @@ export const InvoicePreview = forwardRef<HTMLDivElement, Props>(({ invoice }, re
       ref={ref}
       style={{
         backgroundColor: 'var(--color-off-white)',
-        backgroundImage: 'url(/invoice-bg.png)',
+        backgroundImage: `url(${import.meta.env.BASE_URL}invoice-bg.png)`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',

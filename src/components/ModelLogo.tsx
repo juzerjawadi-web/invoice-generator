@@ -12,7 +12,7 @@ export function ModelLogo({ className, style }: { className?: string, style?: Re
     >
       {/* @ts-ignore */}
       <model-viewer
-        src="/noir-logo.glb"
+        src={`${import.meta.env.BASE_URL}noir-logo.glb`}
         auto-rotate
         camera-controls={false}
         disable-zoom
