@@ -11,3 +11,6 @@ coverage/
 .env*
 
 noir-labs-studio-invoice/
+/paid stamp 3d model.glb
+fix-rack.cjs
+fix-safety.cjs

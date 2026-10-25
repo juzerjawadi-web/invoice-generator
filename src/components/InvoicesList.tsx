@@ -240,7 +240,7 @@ export function InvoicesList({
               }}
               className={`p-1.5 rounded-lg border transition-colors cursor-pointer ${
                 selectedShowcaseId === row.original.id
-                  ? 'bg-off-white border-off-white text-white shadow-sm'
+                  ? 'bg-off-white border-off-white text-black shadow-sm'
                   : 'bg-white/[0.04] border-off-white/15 hover:bg-off-white/20 text-light-gray hover:text-off-white'
               }`}
               title="Showcase in layered deck"
@@ -417,7 +417,7 @@ export function InvoicesList({
                 }}
                 className={`px-3 py-1.5 rounded-xl text-xs font-semibold uppercase tracking-wider transition-all whitespace-nowrap flex items-center gap-1.5 cursor-pointer ${
                   statusFilter === st
-                    ? 'bg-off-white text-white font-bold shadow-md shadow-off-white/30 border border-off-white'
+                    ? 'bg-off-white text-black font-bold shadow-md shadow-off-white/30 border border-off-white'
                     : 'text-light-gray hover:text-off-white hover:bg-white/[0.05]'
                 }`}
               >

@@ -362,16 +362,16 @@ export function Editor({
                   type="button"
                   disabled={isGenerating}
                   onClick={handleGenerateInvoice}
-                  className="w-full py-3.5 rounded-2xl bg-off-white hover:bg-light-gray text-white font-heading font-bold text-sm tracking-wide shadow-lg shadow-off-white/25 transition-all flex items-center justify-center gap-2 disabled:opacity-75 cursor-pointer"
+                  className="w-full py-3.5 rounded-2xl bg-off-white hover:bg-light-gray text-black font-heading font-bold text-sm tracking-wide shadow-lg shadow-off-white/25 transition-all flex items-center justify-center gap-2 disabled:opacity-75 cursor-pointer"
                 >
                   {isGenerating ? (
                     <>
-                      <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                      <div className="w-4 h-4 border-2 border-black/30 border-t-black rounded-full animate-spin" />
                       <span>Generating Invoice...</span>
                     </>
                   ) : (
                     <>
-                      <Sparkles className="w-4 h-4 text-white" />
+                      <Sparkles className="w-4 h-4 text-black" />
                       <span>Generate Invoice</span>
                     </>
                   )}
@@ -467,7 +467,7 @@ export function Editor({
                   </button>
                   <button
                     onClick={handleDownloadPDF}
-                    className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-off-white hover:bg-light-gray text-white text-xs font-bold shadow-md shadow-off-white/25 cursor-pointer transition-all"
+                    className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-off-white hover:bg-light-gray text-black text-xs font-bold shadow-md shadow-off-white/25 cursor-pointer transition-all"
                   >
                     <Download className="w-3.5 h-3.5" /> Download PDF
                   </button>
@@ -576,7 +576,7 @@ export function Editor({
                   </button>
                   <button
                     type="submit"
-                    className="px-4 py-2 rounded-xl bg-off-white hover:bg-light-gray text-white font-bold transition-all shadow-md shadow-off-white/25 cursor-pointer"
+                    className="px-4 py-2 rounded-xl bg-off-white hover:bg-light-gray text-black font-bold transition-all shadow-md shadow-off-white/25 cursor-pointer"
                   >
                     Save & Select Client
                   </button>

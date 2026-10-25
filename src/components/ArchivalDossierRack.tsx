@@ -401,6 +401,7 @@ interface ArchivalDossierRackProps {
   currency: CurrencyCode;
   onCreateNew: () => void;
   onNavigate: (view: AppView) => void;
+  onLoad?: (id: string) => void;
 }
 
 export function ArchivalDossierRack({
@@ -408,6 +409,7 @@ export function ArchivalDossierRack({
   currency,
   onCreateNew,
   onNavigate,
+  onLoad,
 }: ArchivalDossierRackProps) {
   const [hoveredFolder, setHoveredFolder] = useState<DossierFolder | null>(null);
   const [selectedFolder, setSelectedFolder] = useState<DossierFolder | null>(null);
@@ -551,7 +553,7 @@ export function ArchivalDossierRack({
         ...folder,
         code: `INV // ${(invoice?.id || '').slice(0, 8).toUpperCase()}`,
         tabLabel: invoice?.client?.name ? invoice.client.name.substring(0, 15).toUpperCase() : `INVOICE ${i+1}`,
-        title: `${invoice?.client?.name || 'Unknown Client'} // ${invoice?.client?.contactName || invoice?.invoiceNumber || ''}`,
+        title: `${invoice?.client?.name || 'Unknown Client'} // ${(invoice?.client as any)?.contactName || invoice?.invoiceNumber || ''}`,
         subtitle: `Amount: ${formatCurrency(calculateInvoice(invoice).grandTotal, currency)} | Status: ${(invoice?.status || 'draft').toUpperCase()}`,
         description: `Direct access to financial dossier for ${invoice?.client?.name || 'this client'}, registered under identifier ${invoice?.id || ''}. Select to unseal and inspect the active ledger contents immediately.`,
         suggestedActionLabel: `Open Invoice ${invoice?.invoiceNumber || ''}`,
@@ -591,9 +593,9 @@ export function ArchivalDossierRack({
           <div className="inline-flex rounded-lg p-0.5 bg-black/50 border border-white/10">
             <button
               onClick={() => setViewMode('rack')}
-              className={`px-3 py-1.5 rounded-md text-xs font-medium transition-all ${
+              className={`px-3 py-1.5 rounded-md text-xs font-semibold transition-all ${
                 viewMode === 'rack'
-                  ? 'bg-off-white text-white shadow-md'
+                  ? 'bg-off-white text-black shadow-md'
                   : 'text-light-gray hover:text-white'
               }`}
             >
@@ -601,9 +603,9 @@ export function ArchivalDossierRack({
             </button>
             <button
               onClick={() => setViewMode('cards')}
-              className={`px-3 py-1.5 rounded-md text-xs font-medium transition-all ${
+              className={`px-3 py-1.5 rounded-md text-xs font-semibold transition-all ${
                 viewMode === 'cards'
-                  ? 'bg-off-white text-white shadow-md'
+                  ? 'bg-off-white text-black shadow-md'
                   : 'text-light-gray hover:text-white'
               }`}
             >

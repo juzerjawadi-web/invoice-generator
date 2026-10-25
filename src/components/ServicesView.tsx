@@ -315,7 +315,7 @@ export function ServicesView({
               }}
               className={`px-3 py-1.5 rounded-xl text-xs font-semibold uppercase tracking-wider transition-all whitespace-nowrap cursor-pointer ${
                 categoryFilter === cat
-                  ? 'bg-off-white text-white font-bold shadow-md shadow-off-white/25 border border-off-white'
+                  ? 'bg-off-white text-black font-bold shadow-md shadow-off-white/25 border border-off-white'
                   : 'text-light-gray hover:text-white hover:bg-white/[0.05]'
               }`}
             >

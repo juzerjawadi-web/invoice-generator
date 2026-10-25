@@ -44,7 +44,7 @@ export function StackedSection({ children, index, isLast = false }: StackedSecti
 
   const { scrollYProgress } = useScroll({
     target: sectionRef,
-    offset: scrollOffset
+    offset: scrollOffset as any
   });
 
   // Scale down subtly for a premium depth effect, originating from top center

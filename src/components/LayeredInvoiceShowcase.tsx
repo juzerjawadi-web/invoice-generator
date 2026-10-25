@@ -51,7 +51,7 @@ export function LayeredInvoiceShowcase({
         <p className="text-sm text-light-gray mt-1 mb-6">Create your first invoice to view the editorial showcase.</p>
         <button
           onClick={onCreateNew}
-          className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-off-white hover:bg-light-gray text-white text-xs font-semibold shadow-lg transition-all"
+          className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-off-white hover:bg-light-gray text-black text-xs font-semibold shadow-lg transition-all"
         >
           <Plus className="w-4 h-4" />
           <span>Create First Invoice</span>
@@ -172,7 +172,7 @@ export function LayeredInvoiceShowcase({
           {/* Create New Button */}
           <button
             onClick={onCreateNew}
-            className="flex items-center gap-1.5 px-4 py-2 rounded-2xl bg-off-white hover:bg-light-gray text-white text-xs font-bold shadow-lg shadow-off-white/25 hover:shadow-xl transition-all"
+            className="flex items-center gap-1.5 px-4 py-2 rounded-2xl bg-off-white hover:bg-light-gray text-black text-xs font-bold shadow-lg shadow-off-white/25 hover:shadow-xl transition-all"
           >
             <Plus className="w-3.5 h-3.5" />
             <span>New</span>
@@ -243,10 +243,10 @@ export function LayeredInvoiceShowcase({
               </div>
 
               {/* Secondary Card Coral Strip */}
-              <div className="bg-off-white px-6 py-4 flex items-center justify-between text-white">
+              <div className="bg-off-white px-6 py-4 flex items-center justify-between text-black">
                 <div>
-                  <div className="text-[10px] font-bold uppercase tracking-wider text-white/80">Invoice To</div>
-                  <div className="font-heading font-bold text-sm text-white truncate max-w-[200px]">
+                  <div className="text-[10px] font-bold uppercase tracking-wider text-graphite">Invoice To</div>
+                  <div className="font-heading font-bold text-sm text-black truncate max-w-[200px]">
                     {secondaryInvoice.client.companyName || secondaryInvoice.client.name || 'Client Name'}
                   </div>
                 </div>
@@ -315,7 +315,7 @@ export function LayeredInvoiceShowcase({
                   {/* Quick Carousel Arrow Button (matching circular arrow button in Pinterest reference) */}
                   <button
                     onClick={handleNext}
-                    className="w-8 h-8 rounded-full bg-white/[0.08] border border-white/15 flex items-center justify-center text-off-white hover:bg-off-white hover:text-white transition-all cursor-pointer"
+                    className="w-8 h-8 rounded-full bg-white/[0.08] border border-white/15 flex items-center justify-center text-off-white hover:bg-off-white hover:text-black transition-all cursor-pointer"
                     title="Next invoice"
                     aria-label="Next invoice"
                   >
@@ -325,38 +325,38 @@ export function LayeredInvoiceShowcase({
               </div>
             </div>
 
-            {/* 2. CLIENT & METADATA BANNER (Warm Terracotta / Coral var(--color-off-white)) */}
-            <div className="bg-off-white text-white px-4 sm:px-6 lg:px-8 py-4 sm:py-6 relative overflow-hidden">
+            {/* 2. CLIENT & METADATA BANNER (Warm Editorial Tone var(--color-off-white)) */}
+            <div className="bg-off-white text-black px-4 sm:px-6 lg:px-8 py-4 sm:py-6 relative overflow-hidden border-b border-light-gray">
               {/* Subtle decorative inner corner curve matching reference */}
               <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-5">
                 {/* Left: Invoice To & Client Name */}
                 <div className="space-y-1 max-w-md">
-                  <div className="text-[11px] font-bold uppercase tracking-wider text-white/80">
+                  <div className="text-[11px] font-bold uppercase tracking-wider text-graphite">
                     Invoice To
                   </div>
-                  <h3 className="font-heading font-extrabold text-lg sm:text-2xl text-white tracking-tight leading-snug">
+                  <h3 className="font-heading font-extrabold text-lg sm:text-2xl text-black tracking-tight leading-snug">
                     {activeInvoice.client.companyName || activeInvoice.client.name || 'Client Name'}
                   </h3>
                   {activeInvoice.client.name && activeInvoice.client.companyName && (
-                    <p className="text-xs text-white/90 font-medium">Attn: {activeInvoice.client.name}</p>
+                    <p className="text-xs text-graphite font-medium">Attn: {activeInvoice.client.name}</p>
                   )}
                   {activeInvoice.client.address && (
-                    <p className="text-[11px] text-white/80 line-clamp-1 leading-relaxed">
+                    <p className="text-[11px] text-gray line-clamp-1 leading-relaxed">
                       {activeInvoice.client.address}
                     </p>
                   )}
 
                   {/* Quick Client Contact Pills */}
-                  <div className="flex flex-wrap items-center gap-3 pt-1 text-[11px] text-white/85">
+                  <div className="flex flex-wrap items-center gap-3 pt-1 text-[11px] text-graphite">
                     {activeInvoice.client.phone && (
                       <span className="inline-flex items-center gap-1">
-                        <Phone className="w-3 h-3 text-soft-gray" />
+                        <Phone className="w-3 h-3 text-gray" />
                         <span>{activeInvoice.client.phone}</span>
                       </span>
                     )}
                     {activeInvoice.client.email && (
                       <span className="inline-flex items-center gap-1">
-                        <Mail className="w-3 h-3 text-soft-gray" />
+                        <Mail className="w-3 h-3 text-gray" />
                         <span className="truncate max-w-[170px]">{activeInvoice.client.email}</span>
                       </span>
                     )}
@@ -366,18 +366,18 @@ export function LayeredInvoiceShowcase({
                 {/* Right: Invoice No, Date, and Distinctive Golden Amount Pill */}
                 <div className="flex flex-col md:items-end justify-between gap-2.5">
                   <div className="text-left md:text-right space-y-0.5">
-                    <div className="text-xs text-white/90">
-                      <span className="text-white/70 font-medium">No. Invoice: </span>
-                      <strong className="font-mono font-bold">{activeInvoice.invoiceNumber}</strong>
+                    <div className="text-xs text-graphite">
+                      <span className="text-gray font-medium">No. Invoice: </span>
+                      <strong className="font-mono font-bold text-black">{activeInvoice.invoiceNumber}</strong>
                     </div>
-                    <div className="text-xs text-white/90">
-                      <span className="text-white/70 font-medium">Date: </span>
-                      <span>{formatDate(activeInvoice.invoiceDate)}</span>
+                    <div className="text-xs text-graphite">
+                      <span className="text-gray font-medium">Date: </span>
+                      <span className="text-black font-medium">{formatDate(activeInvoice.invoiceDate)}</span>
                     </div>
                     {activeInvoice.dueDate && (
-                      <div className="text-[11px] text-white/75">
-                        <span className="text-white/60">Due: </span>
-                        <span>{formatDate(activeInvoice.dueDate)}</span>
+                      <div className="text-[11px] text-gray">
+                        <span className="text-gray/80">Due: </span>
+                        <span className="text-black">{formatDate(activeInvoice.dueDate)}</span>
                       </div>
                     )}
                   </div>
@@ -465,13 +465,13 @@ export function LayeredInvoiceShowcase({
 
               {/* 4. BOTTOM 3 MODULAR CLUSTERS (Matching Pinterest reference cards!) */}
               <div className="grid grid-cols-1 md:grid-cols-3 gap-3.5 mt-5">
-                {/* Box 1: Terracotta Pill Container (TERM & CONDITIONS) */}
-                <div className="rounded-2xl p-4 bg-off-white text-white shadow-md flex flex-col justify-between">
+                {/* Box 1: Container (TERM & CONDITIONS) */}
+                <div className="rounded-2xl p-4 bg-off-white text-black border border-light-gray shadow-md flex flex-col justify-between">
                   <div>
-                    <h4 className="font-heading font-black text-xs uppercase tracking-wider text-white mb-2.5">
+                    <h4 className="font-heading font-black text-xs uppercase tracking-wider text-black mb-2.5">
                       Term & Conditions
                     </h4>
-                    <div className="space-y-1.5 text-[10px] text-white/90 leading-tight">
+                    <div className="space-y-1.5 text-[10px] text-graphite leading-tight">
                       {(activeInvoice.terms && activeInvoice.terms.length > 0
                         ? activeInvoice.terms.slice(0, 3)
                         : [
@@ -481,14 +481,14 @@ export function LayeredInvoiceShowcase({
                           ]
                       ).map((term, i) => (
                         <div key={i} className="flex items-start gap-1.5">
-                          <span className="w-1.5 h-1.5 rounded-full bg-soft-gray mt-1 flex-shrink-0" />
+                          <span className="w-1.5 h-1.5 rounded-full bg-graphite mt-1 flex-shrink-0" />
                           <span className="line-clamp-2">{term}</span>
                         </div>
                       ))}
                     </div>
                   </div>
-                  <div className="mt-3 text-[9px] uppercase tracking-wider text-white/70 font-semibold">
-                    Status: <strong className="text-white uppercase">{activeInvoice.status}</strong>
+                  <div className="mt-3 text-[9px] uppercase tracking-wider text-gray font-semibold">
+                    Status: <strong className="text-black uppercase">{activeInvoice.status}</strong>
                   </div>
                 </div>
 
@@ -572,7 +572,7 @@ export function LayeredInvoiceShowcase({
               <div className="flex items-center gap-2">
                 <button
                   onClick={() => onEdit(activeInvoice.id)}
-                  className="px-3 py-1.5 rounded-lg bg-off-white hover:bg-light-gray text-white text-xs font-semibold shadow transition-colors flex items-center gap-1.5 cursor-pointer"
+                  className="px-3 py-1.5 rounded-lg bg-off-white hover:bg-light-gray text-black text-xs font-semibold shadow transition-colors flex items-center gap-1.5 cursor-pointer"
                   aria-label="Open Full Editor for this invoice"
                 >
                   <Edit2 className="w-3 h-3" />

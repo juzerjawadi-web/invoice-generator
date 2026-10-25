@@ -23,6 +23,7 @@ import { ArchivalDossierRack } from './ArchivalDossierRack';
 import { InteractiveScrapbook } from './InteractiveScrapbook';
 import { FeatureShowcase } from './FeatureShowcase';
 import { StackedSection } from './StackedSection';
+import { HangingPaidStamp } from './HangingPaidStamp';
 
 interface DashboardProps {
   invoices: Invoice[];
@@ -170,22 +171,31 @@ export function Dashboard({
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.25, delay: 0.15 }}
-          className="glass-panel glass-panel-hover p-4 rounded-2xl relative overflow-hidden"
+          className="glass-panel glass-panel-hover p-4 rounded-2xl relative overflow-visible group"
         >
-          <div className="flex items-center justify-between mb-2">
-            <span className="text-[11px] font-bold uppercase tracking-wider text-light-gray">Paid Invoices</span>
-            <div className="w-7 h-7 rounded-lg bg-graphite/20 text-light-gray flex items-center justify-center">
-              <CheckCircle2 className="w-3.5 h-3.5" />
+          <div className="flex items-center justify-between mb-2 relative z-10">
+            <div className="flex items-center gap-1.5">
+              <span className="text-[11px] font-bold uppercase tracking-wider text-light-gray">Paid Invoices</span>
+              <div className="w-4 h-4 rounded-full bg-emerald-500/10 text-emerald-400 flex items-center justify-center">
+                <CheckCircle2 className="w-2.5 h-2.5" />
+              </div>
             </div>
           </div>
-          <div className="text-xl sm:text-2xl font-heading font-black text-off-white mb-1.5">
-            {paidCount} <span className="text-sm font-normal text-light-gray/70">/ {totalCount}</span>
+          <div className="relative z-10 pr-24 sm:pr-28">
+            <div className="text-xl sm:text-2xl font-heading font-black text-off-white mb-1.5">
+              {paidCount} <span className="text-sm font-normal text-light-gray/70">/ {totalCount}</span>
+            </div>
+            <div className="flex items-center gap-1.5 text-xs text-light-gray">
+              <span className="font-bold">
+                {totalCount > 0 ? ((paidCount / totalCount) * 100).toFixed(0) : 0}%
+              </span>
+              <span className="text-light-gray/70 font-normal">conversion rate</span>
+            </div>
           </div>
-          <div className="flex items-center gap-1.5 text-xs text-light-gray">
-            <span className="font-bold">
-              {totalCount > 0 ? ((paidCount / totalCount) * 100).toFixed(0) : 0}%
-            </span>
-            <span className="text-light-gray/70 font-normal">conversion rate</span>
+
+          {/* 3D Hanging Paid Stamp suspended by rope from the top rim */}
+          <div className="absolute -top-2 right-3 sm:right-4 pointer-events-auto z-20">
+            <HangingPaidStamp />
           </div>
         </motion.div>
 
